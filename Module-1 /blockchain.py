@@ -5,7 +5,7 @@ import hashlib
 import json
 from flask import Flask, jsonify, request
 
-## Building the blockchain
+## Part-1 Building the blockchain
 class Blockchain:
     
     def __init__(self):
@@ -58,8 +58,10 @@ class Blockchain:
             previous_block = block
             block_index += 1
         return True
-            
-##Mining Blockchain
+  
+
+          
+## Part-2 Mining Blockchain
 
 
 ##Create a Web App

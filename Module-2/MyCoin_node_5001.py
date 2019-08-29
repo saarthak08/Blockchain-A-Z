@@ -84,11 +84,11 @@ class Blockchain:
         network=self.nodes
         longest_chain=None
         max_length=len(self.chain)
-        for nodes in network:
+        for node in network:
             response=requests.get(f"http://{node}/get_chain")
             if response.status_code ==200:
-                chain=respone.json['chain']
-                length=response.json['length']
+                chain=response.json()['chain']
+                length=response.json()['length']
             if length > max_length and self.is_chain_valid(chain):
                 max_length=length
                 longest_chain=chain
@@ -163,7 +163,7 @@ def is_valid():
 def add_transaction():
     json=request.get_json()
     transaction_keys=['sender','reciever','amount']
-    if not all (key in json for key in transaction):
+    if not all (key in json for key in transaction_keys):
         return 'Some elements in the transaction are missing', 400
     index=blockchain.add_transaction(json['sender'],json['reciever'],json['amount'])
     response={'message':f'This transaction will be added to block {index}'}
@@ -182,7 +182,7 @@ def connect_node():
         return 'No node',400
     for node in nodes:
         blockchain.add_node(node)
-    return {'messge': 'All the nodes are now connected. The My-Coin Blockchain now contain the following nodes:'
+    response={'messge': 'All the nodes are now connected. The My-Coin Blockchain now contain the following nodes:'
             ,'total_nodes': list(blockchain.nodes) }
     return jsonify(response), 201
 

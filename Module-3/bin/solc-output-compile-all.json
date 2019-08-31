@@ -1,0 +1,27 @@
+{
+    "sources": {
+        "/Users/saarthak08/Documents/Projects/Blockchain/Blockchain A-Z/Module-3/MyCoin_ICO.sol": {
+            "ast": {
+                "absolutePath": "/Users/saarthak08/Documents/Projects/Blockchain/Blockchain A-Z/Module-3/MyCoin_ICO.sol",
+                "exportedSymbols": {},
+                "id": 2,
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.5",
+                            ".10"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "0:23:0"
+                    }
+                ],
+                "src": "0:23:0"
+            },
+            "id": 0
+        }
+    }
+}
